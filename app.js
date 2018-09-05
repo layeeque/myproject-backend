@@ -1,9 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser')
-//const mongoose = require('mongoose');
-//const login = require('./src/controllers/login');
+const mongoose = require('mongoose');
+const login = require('./src/controllers/login');
 // mongoose.connect('mongodb://localhost:27017/projectdb');
-//mongoose.connect('mongodb://abc:abc123@ds135852.mlab.com:35852/projectdb');
+mongoose.connect('mongodb://abc:abc123@ds135852.mlab.com:35852/projectdb');
 const app = express();
 app.use(bodyParser.json())
 
@@ -14,7 +14,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-//login(app);
+login(app);
 
 app.get('/api', (req, res) => {
   res.send({
