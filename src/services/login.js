@@ -9,7 +9,7 @@ module.exports =(req, res) => {
         login: (req, res) => {
             console.log("I am in login services")
 
-            empModel.find({ 'name': req.body.name }, (err, data) => {
+            empModel.find({ 'email': req.body.email }, (err, data) => {
                 if (err) {
                     res.status('400').send(err);
                 } else {
