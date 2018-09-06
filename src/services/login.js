@@ -7,8 +7,9 @@ module.exports =(req, res) => {
     return {
         login: (req, res) => {
             console.log("I am in login services")
+            console.log(req.body.email+" "+req.body.password)
 
-            empModel.find({ 'email': req.body.email }, (err, data) => {
+            empModel.find({ 'email': req.body.email,'password':req.body.password }, (err, data) => {
                 if (err) {
                     res.status('400').send(err);
                 } else {
@@ -18,7 +19,8 @@ module.exports =(req, res) => {
                             'success': '0',
                             'message': 'Username/Password is Invalid'
                             
-                        })
+                        }) 
+
 
                     }
                     // else if (data[0].password != req.body.password) {
@@ -69,7 +71,7 @@ module.exports =(req, res) => {
             res.send(resObj);
         },
         changePassword: (req, res) => {
-            console.log("changed $$ "+req.body.email)
+            
 
             empModel.find({ 'email': req.body.email }, (err, data) => {
                 if(data== ""){
@@ -99,7 +101,7 @@ module.exports =(req, res) => {
                         //console.log(data)
                         var resObj = {};
                         resObj['success'] = '1';  
-                        resObj['message'] = 'your new Password has been sent to your Registered Email';
+                        resObj['message'] = 'your new Password has been sent to your Registered Email '+ req.body.email;
                         res.send(resObj);
                        
                     }
