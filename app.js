@@ -16,11 +16,11 @@ app.use(function(req, res, next) {
 
 login(app);
 
-app.get('/api', (req, res) => {
-  res.send({
-    message: 'Welcome to the API'
-  });
-});
+// app.get('/api', (req, res) => {
+//   res.send({
+//     message: 'Welcome to the API'
+//   });
+// });
 
 
 

@@ -4,8 +4,8 @@ var Schema = mongoose.Schema;
 
 // create a schema
 var emp = new Schema({
-    empId: String,
-    name: String,
+    // empId: String,
+    email: String,
     password: { type: String, 
        required: true 
     }
