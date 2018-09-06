@@ -86,7 +86,7 @@ module.exports =(req, res) => {
                         service: 'gmail',
                         auth: {
                             user: 'layeequerehman@gmail.com',
-                            pass: '9373950389'
+                            pass: 'Alfaiz@22'
                         }
                     });
                     var newpassword=randomstring.generate(7);
