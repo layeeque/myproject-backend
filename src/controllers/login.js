@@ -13,6 +13,10 @@ module.exports = (app) => {
         console.log("in sign up ctrl")
         loginService().signUp(req, res);
     });
+    app.post('/changePassword', (req, res) => {
+        console.log("in change password ctrl")
+        loginService().changePassword(req, res);
+    });
     app.post('/loadData', tokenval, (req, res) => {
         dashboardService().loadData(req, res);
 
