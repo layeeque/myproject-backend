@@ -109,7 +109,7 @@ module.exports =(req, res) => {
                     var mailOptions = {
                         from: 'layeequerehman@gmail.com',
                         to: req.body.email,
-                        subject: '[TODO App] New Password ',
+                        subject: 'TODO App New Password ',
                         text: 'Hi '+req.body.email+', \n\n Your new passowrd is '+newpassword +'. \n\n\n Best Regards, \n TODO App'
                     };
             
